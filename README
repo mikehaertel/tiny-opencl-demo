@@ -1,0 +1,21 @@
+This is a minimal OpenCL program to benchmark NxN matrix multiplication
+on a GPU.  The matrices are initialized to zero, because this program
+is not trying to do anything actually interesting.
+
+It uses the first enumerated GPU on the system, whatever that happens
+to be.  It performs *no error checking whatsoever* on the return status
+of OpenCL runtime library calls.  It gives no indication of success or
+failure other than by consuming time.
+
+The main purpose of this program is to be a cheat sheet / reminder to
+myself of how to write a complete OpenCL program.
+
+To build:
+
+	$ make N=<a multiple of 16> matmul
+
+To run:
+
+	$ time ./matmul
+
+It produces no output.
